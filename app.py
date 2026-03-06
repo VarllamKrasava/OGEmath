@@ -21,7 +21,7 @@ if st.button("Решить задачу"):
     if user_task:
         with st.spinner("ИИ думает..."):
             # Вызов API ИИ-помощника
-            api_key = os.getenv("MDE5Y2JjYWItYzZmNC03ZWQ5LWE2N2UtZTk5YjQ2Njc5NjVkOjZiZGUyNWQ5LWY4YjktNDVhNy05YTc3LTI0MGYwNjFhNzI5NQ==")  # Замените на ваш ключ
+            api_key = os.getenv("MDE5Y2MyMDUtOGIwNy03ZGIwLWJiYzgtZDYxNGM2ZWNlMGQ5OmYyODNjMWIyLWVhOGYtNGIyNi05ZTQ2LTgyNDAyYTcxMTJkNg==")  # Замените на ваш ключ
             headers = {"Authorization": f"Bearer {api_key}"}
             data = {"prompt": f"Реши задачу: {user_task}"}
 
@@ -47,6 +47,7 @@ st.subheader("Пример задачи:")
 st.write("""
 Решите уравнение: 2x + 5 = 15
 """)
+
 
 
 
