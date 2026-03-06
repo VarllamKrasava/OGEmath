@@ -27,7 +27,7 @@ if st.button("Решить задачу"):
 
             try:
                 response = requests.post(
-                    "https://api.example.com/v1/ai/solve",
+                    "https://gigachat.devices.sberbank.ru/api/v1/chat/completions",
                     headers=headers,
                     json=data
                 )
@@ -45,6 +45,7 @@ st.subheader("Пример задачи:")
 st.write("""
 Решите уравнение: 2x + 5 = 15
 """)
+
 
 
 
