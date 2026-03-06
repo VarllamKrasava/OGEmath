@@ -4,7 +4,7 @@ import os
 
 # Это нужно для Railway
 if 'RAILWAY_ENVIRONMENT' in os.environ:
-    st.set_page_config(server_port=int(os.environ.get('PORT', 8501)))
+    st.set_page_config(page_title="ОГЭ по математике с ИИ", layout="wide")
 
 
 # Настройки страницы
@@ -45,5 +45,6 @@ st.subheader("Пример задачи:")
 st.write("""
 Решите уравнение: 2x + 5 = 15
 """)
+
 
 
