@@ -2,28 +2,23 @@ import streamlit as st
 import requests
 import os
 
-# Это нужно для Railway
-if 'RAILWAY_ENVIRONMENT' in os.environ:
-    st.set_page_config(page_title="ОГЭ по математике с ИИ", layout="wide")
-
-
-# Настройки страницы
 st.set_page_config(page_title="ОГЭ по математике с ИИ", layout="wide")
-
-# Заголовок
 st.title("Подготовка к ОГЭ по математике с ИИ-помощником")
 
-# Поле для ввода задачи
 user_task = st.text_area("Введите задачу по математике:", height=150)
 
-# Кнопка отправки
 if st.button("Решить задачу"):
     if user_task:
         with st.spinner("ИИ думает..."):
-            # Вызов API ИИ-помощника
-            api_key = os.getenv("MDE5Y2MyMDUtOGIwNy03ZGIwLWJiYzgtZDYxNGM2ZWNlMGQ5OmYyODNjMWIyLWVhOGYtNGIyNi05ZTQ2LTgyNDAyYTcxMTJkNg==")  # Замените на ваш ключ
-            headers = {"Authorization": f"Bearer {api_key}"}
-            data = {"prompt": f"Реши задачу: {user_task}"}
+            api_key = os.getenv("GIGACHAT_API_KEY")  # Убедитесь, что ключ чистый (без кодирования)
+            headers = {
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json"
+            }
+            data = {
+                "model": "GigaChat",
+                "messages": [{"role": "user", "content": f"Реши задачу: {user_task}"}]
+            }
 
             try:
                 response = requests.post(
@@ -34,19 +29,19 @@ if st.button("Решить задачу"):
                     timeout=10
                 )
                 response.raise_for_status()
-                solution = response.json().get("solution", "Решение не найдено")
+                st.write("Полный ответ API:", response.json())  # Для отладки
+                solution = response.json()["choices"][0]["message"]["content"]
                 st.success("Решение:")
                 st.write(solution)
             except Exception as e:
                 st.error(f"Ошибка: {e}")
-    else:
-        st.warning("Пожалуйста, введите задачу.")
 
 # Пример задачи (для демонстрации)
 st.subheader("Пример задачи:")
 st.write("""
 Решите уравнение: 2x + 5 = 15
 """)
+
 
 
 
