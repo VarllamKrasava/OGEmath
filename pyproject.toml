@@ -1,2 +1,11 @@
+[project]
+name = "my_project"
+version = "0.1.0"
+description = "My awesome project"
+requires-python = ">=3.8"
+dependencies = [
+    "flask>=2.0.0",  # или другой фреймворк
+]
+
 [project.scripts]
-app = "app:app"
+app = "app:app"  # если у тебя Flask/FastAPI и точка входа — app.py
