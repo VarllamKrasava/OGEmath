@@ -1,3 +1,4 @@
+[project]
 name = "my_project"  # обязательное поле
 version = "0.1.0"    # обязательное поле
 description = "My web application"
@@ -6,4 +7,5 @@ dependencies = [
     "flask>=2.0.0",  # или fastapi, django и т.д.
 ]
 
+[project.scripts]
 app = "app:app"  # если у тебя точка входа — app.py, функция app
