@@ -1,7 +1,7 @@
 import streamlit as st
 
-st.title("Hello, Railway!")
-st.write("Приложение успешно запущено.")
+port = int(os.environ.get("PORT", 8501))
+st.write(f"Application is running on port {port}")
 
 import requests
 import base64
