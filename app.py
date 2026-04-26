@@ -11,6 +11,9 @@ app = Flask(__name__)  # Оставь как есть!
 def home():
     return "Hello, Flask!"
 
+if __name__ == "__main__":
+    app.run(port=5000)
+
 # Настройки страницы
 st.set_page_config(page_title="ОГЭ по математике с ИИ", layout="wide")
 st.title("Подготовка к ОГЭ по математике с ИИ-помощником")
