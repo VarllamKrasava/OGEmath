@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 
 port = int(os.environ.get("PORT", 8501))
@@ -6,7 +7,6 @@ st.write(f"Application is running on port {port}")
 import requests
 import base64
 import uuid
-import os
 
 # Настройки страницы
 st.set_page_config(page_title="ОГЭ по математике с ИИ", layout="wide")
