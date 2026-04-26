@@ -1,4 +1,8 @@
 import streamlit as st
+
+st.title("Hello, Railway!")
+st.write("Приложение успешно запущено.")
+
 import requests
 import base64
 import uuid
