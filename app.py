@@ -4,6 +4,13 @@ import base64
 import uuid
 import os
 
+from flask import Flask
+app = Flask(__name__)  # Оставь как есть!
+
+@app.route("/")
+def home():
+    return "Hello, Flask!"
+
 # Настройки страницы
 st.set_page_config(page_title="ОГЭ по математике с ИИ", layout="wide")
 st.title("Подготовка к ОГЭ по математике с ИИ-помощником")
