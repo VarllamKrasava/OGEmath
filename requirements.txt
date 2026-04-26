@@ -1,3 +1,4 @@
 streamlit>=1.30.0
 requests
 python-dotenv
+flask==2.0.0
